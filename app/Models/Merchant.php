@@ -8,34 +8,28 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 
-class User extends Model
+class Merchant extends Model
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    protected $table = 'users';
+    protected $table = 'merchant';
 
     protected $fillable = [
         'name',
-        'email',
-        'conta',
-        'carteira',
-        'food',
-        'meal',
+        'mcc',
+        'localizaction',
     ];
 
     public function sentTransaction(){
-        return $this->hasMany(Transaction::class,user_id);
+        return $this->hasMany(Transaction::class,merchant_id);
     }
 
 
     public static function creatTable(){
-        $sql = "CREATE TABLE IF NOT EXISTS users(
+        $sql = "CREATE TABLE IF NOT EXISTS merchant(
             id INT AUTO_INCREMENT PRIMARY KEY,
             name VARCHAR(255) NOT NULL,
-            email VARCHAR(255) NOT NULL UNIQUE,
-            conta VARCHAR(255) NOT NULL UNIQUE,
-            carteira DECIMAL(10,2) DEFAULT 0.00,
-            food DECIMAL(10,2) DEFAULT 0.00,
-            meal DECIMAL(10,2) DEFAULT 0.00,
+            mcc VARCHAR(255) NOT NULL,
+            localizaction VARCHAR(255) NOT NULL,
             created_at TIMESTAMP,
             updated_at TIMESTAMP
         )" ;

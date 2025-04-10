@@ -19,7 +19,6 @@ return new class extends Migration
             $table->decimal('carteira',10, 2)->default(0.00);
             $table->decimal('food',10, 2)->default(0.00);
             $table->decimal('meal',10, 2)->default(0.00);
-            $table->rememberToken();
             $table->timestamps();
         });
     }
