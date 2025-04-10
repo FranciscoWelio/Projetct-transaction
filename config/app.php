@@ -40,7 +40,9 @@ return [
     */
 
     'debug' => (bool) env('APP_DEBUG', false),
-
+    'provider' =>[
+        App\Providers\H2ServiceProvider::class,
+    ],
     /*
     |--------------------------------------------------------------------------
     | Application URL
