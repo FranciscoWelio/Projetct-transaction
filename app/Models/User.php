@@ -23,7 +23,7 @@ class User extends Model
     ];
 
     public function sentTransaction(){
-        return $this->hasMany(Transaction::class,user_id);
+        return $this->hasMany(Transaction::class,'user_id');
     }
 
 

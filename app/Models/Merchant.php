@@ -20,7 +20,7 @@ class Merchant extends Model
     ];
 
     public function sentTransaction(){
-        return $this->hasMany(Transaction::class,merchant_id);
+        return $this->hasMany(Transaction::class,'merchant_id');
     }
 
 

@@ -4,8 +4,16 @@ namespace App\Http\Controllers;
 
 use Request;
 
-abstract class Controller
+
+/**
+ * @OA\Tag(
+ *     name="Users",
+ *     description="API para EndPoints do User"
+ * )
+ */
+abstract class Controller extends Controller
 {
+   
     public function card(Request $request){
         $validado = $request->validada([
             'user_id' => 'required|numeric',
