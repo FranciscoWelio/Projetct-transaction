@@ -14,10 +14,10 @@ use Request;
  class MerchantController extends Controller{
     /**
      * @OA\Get(
-     *      path="/web/merchant,
-     *      tags={"Merchant},
+     *      path="/web/merchants",
+     *      tags={"Merchant"},
      *      summary="Lista Mercados",
-     *      @Oa\Response(
+     *      @OA\Response(
      *          response=200,
      *          description="Listar Mercados"
      *      )
@@ -29,8 +29,8 @@ use Request;
 
     /**
      * @OA\Post(
-     *     path="/web/merchant,
-     *      tags={"Merchant},
+     *     path="/web/merchants",
+     *      tags={"Merchant"},
      *      summary="Criar Mercados",
      *     @OA\RequestBody(
      *         required=true,
@@ -59,8 +59,8 @@ use Request;
 
     /**
      * @OA\Get(
-     *      path="/web/merchant,
-     *      tags={"Merchant},
+     *      path="/web/merchants/{id}",
+     *      tags={"Merchant"},
      *      summary="Lista mercados pelo ID",
      *      @OA\Parameter(
      *         name="id",
@@ -71,7 +71,7 @@ use Request;
      *              type="integer"
      *          )
      *     ),
-     *      @Oa\Response(
+     *      @OA\Response(
      *          response=200,
      *          description="Listar mercados"
      *      )

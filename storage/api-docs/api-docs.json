@@ -1,0 +1,287 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Your API Name",
+        "description": "API Documentation for Your Laravel Project",
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8000/api",
+            "description": "API Server"
+        }
+    ],
+    "paths": {
+        "/web/merchants": {
+            "get": {
+                "tags": [
+                    "Merchant"
+                ],
+                "summary": "Lista Mercados",
+                "operationId": "1f058adb3616063bf33c48a6511a4345",
+                "responses": {
+                    "200": {
+                        "description": "Listar Mercados"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Merchant"
+                ],
+                "summary": "Criar Mercados",
+                "operationId": "06d5396ee1d4b48bdf624ccf76c7de37",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "mcc",
+                                    "localizaction"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "mcc": {
+                                        "type": "string"
+                                    },
+                                    "localizaction": {
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Mercado Criado Com sucesso"
+                    }
+                }
+            }
+        },
+        "/web/merchants/{id}": {
+            "get": {
+                "tags": [
+                    "Merchant"
+                ],
+                "summary": "Lista mercados pelo ID",
+                "operationId": "50ebeee6576acc0da9d9007d70d2a056",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do mercados",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Listar mercados"
+                    }
+                }
+            }
+        },
+        "/web/transactions": {
+            "get": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Lista Transações",
+                "operationId": "2a9ad45dd9977a154709ed6100107839",
+                "responses": {
+                    "200": {
+                        "description": "Listar Transações"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Criando Transações",
+                "operationId": "6eb8314d0d9f01fb0bb874a8a80106ec",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "user_id",
+                                    "merchant_id",
+                                    "amount",
+                                    "mcc",
+                                    "status"
+                                ],
+                                "properties": {
+                                    "user_id": {
+                                        "type": "integer"
+                                    },
+                                    "merchant_id": {
+                                        "type": "integer",
+                                        "format": "email"
+                                    },
+                                    "amount": {
+                                        "type": "number",
+                                        "minimum": "0.01"
+                                    },
+                                    "mcc": {
+                                        "type": "status"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Transações Criada Com sucesso"
+                    }
+                }
+            }
+        },
+        "/web/transactions/{id}": {
+            "get": {
+                "tags": [
+                    "Transaction"
+                ],
+                "summary": "Lista Transações pelo ID",
+                "operationId": "b4d2eb725985057997dee9c51f0dea36",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do Transações",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Listar Transações"
+                    }
+                }
+            }
+        },
+        "/web/users": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Lista usuários",
+                "operationId": "e72e0b47c85f7e234e2569a0f3ba75e9",
+                "responses": {
+                    "200": {
+                        "description": "Listar usuários"
+                    }
+                }
+            }
+        },
+        "/api/users": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Criando Usuário",
+                "operationId": "592819a0265360b2014512d6dbfaf0e7",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "name",
+                                    "email",
+                                    "conta",
+                                    "carteira",
+                                    "food",
+                                    "meal"
+                                ],
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "format": "email"
+                                    },
+                                    "conta": {
+                                        "type": "string"
+                                    },
+                                    "carteira": {
+                                        "type": "decimal"
+                                    },
+                                    "food": {
+                                        "type": "decimal"
+                                    },
+                                    "meal": {
+                                        "type": "decimal"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Usuários Criado Com sucesso"
+                    }
+                }
+            }
+        },
+        "/web/users/{id}": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Lista usuários pelo ID",
+                "operationId": "afc6654f143e74186e2d012cf188be40",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do Usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Listar usuários"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Users",
+            "description": "API user"
+        },
+        {
+            "name": "Merchant",
+            "description": "Merchant"
+        },
+        {
+            "name": "Transaction",
+            "description": "Transaction"
+        }
+    ]
+}

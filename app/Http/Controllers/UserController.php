@@ -15,10 +15,10 @@ use Request;
 class UserController extends Controller{
     /**
      * @OA\Get(
-     *      path="/web/users,
-     *      tags={"Users},
+     *      path="/web/users",
+     *      tags={"Users"},
      *      summary="Lista usuários",
-     *      @Oa\Response(
+     *      @OA\Response(
      *          response=200,
      *          description="Listar usuários"
      *      )
@@ -66,8 +66,8 @@ class UserController extends Controller{
 
     /**
      * @OA\Get(
-     *      path="/web/users,
-     *      tags={"Users},
+     *      path="/web/users/{id}",
+     *      tags={"Users"},
      *      summary="Lista usuários pelo ID",
      *      @OA\Parameter(
      *         name="id",
@@ -78,7 +78,7 @@ class UserController extends Controller{
      *              type="integer"
      *          )
      *     ),
-     *      @Oa\Response(
+     *      @OA\Response(
      *          response=200,
      *          description="Listar usuários"
      *      )

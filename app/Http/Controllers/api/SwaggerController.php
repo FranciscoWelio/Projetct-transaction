@@ -1,10 +1,5 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
 /**
  * @OA\Info(
  *     title="Your API Name",
@@ -20,7 +15,3 @@ use Illuminate\Routing\Controller as BaseController;
  *     description="API Server"
  * )
  */
-class Controller extends BaseController
-{
-    use AuthorizesRequests, ValidatesRequests;
-}
